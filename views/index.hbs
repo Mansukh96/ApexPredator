@@ -214,7 +214,7 @@
 
         $("#main-heading").text("Work Association");
 
-        if (jQuery.isEmptyObject(global_work);) {
+        if (jQuery.isEmptyObject(global_work)) {
             $.get("/localhost:3000/", function(data, status){
                 if (status == "sucess") {
                     global_work = data;
@@ -237,7 +237,7 @@
 
         $("#main-heading").text("Anomilies");
 
-        if (jQuery.isEmptyObject(global_anom);) {
+        if (jQuery.isEmptyObject(global_anom)) {
             $.get("/localhost:3000/", function(data, status){
                 if (status == "sucess") {
                     global_anom = data;
@@ -260,7 +260,7 @@
 
         $("#main-heading").text("Influences");
 
-        if (jQuery.isEmptyObject(global_influ);) {
+        if (jQuery.isEmptyObject(global_influ)) {
             $.get("/localhost:3000/", function(data, status){
                 if (status == "sucess") {
                     global_influ = data;
@@ -283,7 +283,7 @@
 
         $("#main-heading").text("Frequent Terms");
 
-        if (jQuery.isEmptyObject(global_freq);) {
+        if (jQuery.isEmptyObject(global_freq)) {
             $.get("/localhost:3000/", function(data, status){
                 if (status == "sucess") {
                     global_freq = data;
@@ -306,7 +306,7 @@
 
         $("#main-heading").text("Topics");
 
-        if (jQuery.isEmptyObject(global_topic);) {
+        if (jQuery.isEmptyObject(global_topic)) {
             $.get("/localhost:3000/", function(data, status){
                 if (status == "sucess") {
                     global_topic = data;
@@ -329,7 +329,7 @@
 
         $("#main-heading").text("Timeline");
 
-        if (jQuery.isEmptyObject(global_time);) {
+        if (jQuery.isEmptyObject(global_time)) {
             $.get("/localhost:3000/", function(data, status){
                 if (status == "sucess") {
                     global_time = data;
@@ -351,7 +351,7 @@
 
         $("#main-heading").text("Geolocation");
 
-        if (jQuery.isEmptyObject(global_geo);) {
+        if (jQuery.isEmptyObject(global_geo)) {
             $.get("/localhost:3000/", function(data, status){
                 if (status == "sucess") {
                     global_geo = data;
@@ -373,7 +373,7 @@
 
         $("#main-heading").text("Full Text Search");
 
-        if (jQuery.isEmptyObject(global_fulltext);) {
+        if (jQuery.isEmptyObject(global_fulltext)) {
             $.get("/localhost:3000/", function(data, status){
                 if (status == "sucess") {
                     global_fulltext = data;
