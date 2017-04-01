@@ -1,3 +1,7 @@
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="/javascripts/viz/top30force.js"></script>
+
 <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -104,12 +108,12 @@
 
                 <div class="freq-blocks">
                     <div class="row">
-                        <div class="col-md-9 temp">
+                        <div class="col-md-9 temp" id = "frequent_terms">
                             <div class="content">
                                  FREQUENT TERMS 9 
                             </div> 
                         </div>
-                        <div class="col-md-3 temp">
+                        <div class="col-md-3 temp" id = "side_info_frequent_words">
                             <div class="content">
                                  FREQUENT TERMS 3
                             </div> 
@@ -229,10 +233,11 @@
 
         $("#main-heading").text("Work Association");
 
-        if (jQuery.isEmptyObject(global_work)) {
-            $.get("/localhost:3000/", function(data, status){
-                if (status == "sucess") {
-                    global_work = data;
+        if (jQuery.isEmptyObject(global_word)) {
+            $.get("http://localhost:3000/api/word_association", function(data, status){
+                if (status == "success") {
+                    global_word = data[0];
+                    console.log(global_word);
                 }
             
             });
@@ -253,9 +258,10 @@
         $("#main-heading").text("Anomilies");
 
         if (jQuery.isEmptyObject(global_anom)) {
-            $.get("/localhost:3000/", function(data, status){
-                if (status == "sucess") {
-                    global_anom = data;
+            $.get("http://localhost:3000/api/anomalies/kashmir", function(data, status){
+                if (status == "success") {
+                    global_anom = data[0];
+                    console.log(global_anom);
                 }
             
             });
@@ -276,9 +282,10 @@
         $("#main-heading").text("Influences");
 
         if (jQuery.isEmptyObject(global_influ)) {
-            $.get("/localhost:3000/", function(data, status){
-                if (status == "sucess") {
-                    global_influ = data;
+            $.get("http://localhost:3000/api/influencers/kashmir", function(data, status){
+                if (status == "success") {
+                    global_influ = data[0];
+                    console.log(global_anom);
                 }
             
             });
@@ -299,9 +306,14 @@
         $("#main-heading").text("Frequent Terms");
 
         if (jQuery.isEmptyObject(global_freq)) {
-            $.get("/localhost:3000/", function(data, status){
-                if (status == "sucess") {
-                    global_freq = data;
+            $.get("http://localhost:3000/api/top30/kashmir", function(data, status){
+                if (status == "success") {
+                    global_freq = data[0];
+                    console.log(global_freq);
+                    actual_draw_clusters(global_freq, false);
+                }
+                else{
+                    console.log(status);
                 }
             
             });
@@ -322,9 +334,10 @@
         $("#main-heading").text("Topics");
 
         if (jQuery.isEmptyObject(global_topic)) {
-            $.get("/localhost:3000/", function(data, status){
-                if (status == "sucess") {
-                    global_topic = data;
+            $.get("http://localhost:3000/api/flatclustering/kashmir", function(data, status){
+                if (status == "success") {
+                    global_topic = data[0];
+                    console.log(global_anom);
                 }
             
             });
@@ -345,9 +358,10 @@
         $("#main-heading").text("Timeline");
 
         if (jQuery.isEmptyObject(global_time)) {
-            $.get("/localhost:3000/", function(data, status){
-                if (status == "sucess") {
-                    global_time = data;
+            $.get("http://localhost:3000/api/timeline/kashmir", function(data, status){
+                if (status == "success") {
+                    global_time = data[0];
+                    console.log(global_anom);
                 }
             
             });
@@ -367,9 +381,10 @@
         $("#main-heading").text("Geolocation");
 
         if (jQuery.isEmptyObject(global_geo)) {
-            $.get("/localhost:3000/", function(data, status){
-                if (status == "sucess") {
-                    global_geo = data;
+            $.get("http://localhost:3000/api/map/kashmir", function(data, status){
+                if (status == "success") {
+                    global_geo = data[0];
+                    console.log(global_geo);
                 }
             
             });
@@ -389,9 +404,10 @@
         $("#main-heading").text("Full Text Search");
 
         if (jQuery.isEmptyObject(global_fulltext)) {
-            $.get("/localhost:3000/", function(data, status){
-                if (status == "sucess") {
-                    global_fulltext = data;
+            $.get("http://localhost:3000/api/search/kashmir", function(data, status){
+                if (status == "success") {
+                    global_fulltext = data[0];
+                    console.log(global_anom);
                 }
             
             });
