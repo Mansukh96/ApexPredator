@@ -1,0 +1,386 @@
+<div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        ApexPredator
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="search-btn">Search</a>
+                </li>
+                <li>
+                    <a href="#" id="work-btn">Work Association</a>
+                </li>
+                <li>
+                    <a href="#" id="anom-btn">Anomilies</a>
+                </li>
+                <li>
+                    <a href="#" id="influ-btn">Influences</a>
+                </li>
+                <li>
+                    <a href="#" id="freq-btn">Frequent Terms</a>
+                </li>
+                <li>
+                    <a href="#" id="topic-btn">Topics</a>
+                </li>
+                <li>
+                    <a href="#" id="time-btn">Timeline</a>
+                </li>
+                <li>
+                    <a href="#" id="geo-btn">Geolocation</a>
+                </li>
+                <li>
+                    <a href="#" id="fulltext-btn">Full Text Search</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-default navbar-fixed-top">
+                            <div class="container-fluid">
+                               <!--  <div class="navbar-header">
+                                    <a class="navbar-brand" href="#">
+                                        Brand
+                                    </a>
+                                </div> -->
+                                <a href="#menu-toggle" class="btn btn-default navbar-btn pull-left pull-left" id="menu-toggle"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+                            </div>
+                        </nav>
+                        <h1 id="main-heading"></h1>
+                    </div>
+                </div>
+                
+                <div class="search-blocks">
+                    <div class="row">
+                        <div class="col-md-12 temp">
+                            <div class="" align="center">
+                                <br>
+                                <br>
+                                <h1 id="apex">Apex<label id="pred">Predator</label></h1><br>
+                                <input type="text" name="search" width="100" id="search" placeholder="Enter topic..." /><br><br>
+                                <button class="btn btn-default s-btn">Search</button>
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="work-blocks">
+                    <div class="row">
+                        <div class="col-md-12 temp">
+                            <div class="content">
+                                 WORK ASSOC. 
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="anom-blocks">
+                    <div class="row">
+                        <div class="col-md-12 temp">
+                            <div class="content">
+                                 ANOMOLIES 
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="influ-blocks">
+                    <div class="row">
+                        <div class="col-md-12 temp">
+                            <div class="content">
+                                 INFLUENCES
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="freq-blocks">
+                    <div class="row">
+                        <div class="col-md-12 temp">
+                            <div class="content">
+                                 FREQUENT TERMS 
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="topic-blocks">
+                    <div class="row">
+                        <div class="col-md-12 temp">
+                            <div class="content">
+                                 TOPICS 
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="time-blocks">
+                    <div class="row">
+                        <div class="col-md-12 temp">
+                            <div class="content">
+                                 TIMELINE 
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="geo-blocks">
+                    <div class="row">
+                        <div class="col-md-12 temp">
+                            <div class="content">
+                                 GEOLOCATION 
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="fulltext-blocks">
+                    <div class="row">
+                        <div class="col-md-12 temp">
+                            <div class="content">
+                                 FULTEXT SEARCH 
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+        // Hide all other blocks apart from Dashboard
+        $(".work-blocks").hide();
+        $(".anom-blocks").hide();
+        $(".influ-blocks").hide();
+        $(".freq-blocks").hide();
+        $(".topic-blocks").hide();
+        $(".time-blocks").hide();
+        $(".geo-blocks").hide();
+        $(".fulltext-blocks").hide();
+
+        global_work = {};
+        global_anom = {};
+        global_influ = {};
+        global_freq = {};
+        global_topic = {};
+        global_time = {};
+        global_geo = {};
+        global_fulltext = {};
+
+    $("#search-btn").click(function(e) {
+        $(".search-blocks").show();
+        $(".work-blocks").hide();
+        $(".anom-blocks").hide();
+        $(".influ-blocks").hide();
+        $(".freq-blocks").hide();
+        $(".topic-blocks").hide();
+        $(".time-blocks").hide();
+        $(".geo-blocks").hide();
+        $(".fulltext-blocks").hide();
+
+        $("#main-heading").text("");
+    })
+
+    $("#work-btn").click(function(e) {
+        $(".work-blocks").show();
+        $(".search-blocks").hide();
+        $(".anom-blocks").hide();
+        $(".influ-blocks").hide();
+        $(".freq-blocks").hide();
+        $(".topic-blocks").hide();
+        $(".time-blocks").hide();
+        $(".geo-blocks").hide();
+        $(".fulltext-blocks").hide();
+
+        $("#main-heading").text("Work Association");
+
+        if (jQuery.isEmptyObject(global_work);) {
+            $.get("/localhost:3000/", function(data, status){
+                if (status == "sucess") {
+                    global_work = data;
+                }
+            
+            });
+        }
+    })
+
+    $("#anom-btn").click(function(e) {
+        $(".anom-blocks").show();
+        $(".search-blocks").hide();
+        $(".work-blocks").hide();
+        $(".influ-blocks").hide();
+        $(".freq-blocks").hide();
+        $(".topic-blocks").hide();
+        $(".time-blocks").hide();
+        $(".geo-blocks").hide();
+        $(".fulltext-blocks").hide();
+
+        $("#main-heading").text("Anomilies");
+
+        if (jQuery.isEmptyObject(global_anom);) {
+            $.get("/localhost:3000/", function(data, status){
+                if (status == "sucess") {
+                    global_anom = data;
+                }
+            
+            });
+        }
+    })
+
+    $("#influ-btn").click(function(e) {
+        $(".influ-blocks").show();
+        $(".search-blocks").hide();
+        $(".work-blocks").hide();
+        $(".anom-blocks").hide();
+        $(".freq-blocks").hide();
+        $(".topic-blocks").hide();
+        $(".time-blocks").hide();
+        $(".geo-blocks").hide();
+        $(".fulltext-blocks").hide();
+
+        $("#main-heading").text("Influences");
+
+        if (jQuery.isEmptyObject(global_influ);) {
+            $.get("/localhost:3000/", function(data, status){
+                if (status == "sucess") {
+                    global_influ = data;
+                }
+            
+            });
+        }
+    })
+
+    $("#freq-btn").click(function(e) {
+        $(".freq-blocks").show();
+        $(".search-blocks").hide();
+        $(".work-blocks").hide();
+        $(".anom-blocks").hide();
+        $(".influ-blocks").hide();
+        $(".topic-blocks").hide();
+        $(".time-blocks").hide();
+        $(".geo-blocks").hide();
+        $(".fulltext-blocks").hide();
+
+        $("#main-heading").text("Frequent Terms");
+
+        if (jQuery.isEmptyObject(global_freq);) {
+            $.get("/localhost:3000/", function(data, status){
+                if (status == "sucess") {
+                    global_freq = data;
+                }
+            
+            });
+        }
+    })
+
+    $("#topic-btn").click(function(e) {
+        $(".topic-blocks").show();
+        $(".search-blocks").hide();
+        $(".freq-blocks").hide();
+        $(".work-blocks").hide();
+        $(".anom-blocks").hide();
+        $(".influ-blocks").hide();
+        $(".time-blocks").hide();
+        $(".geo-blocks").hide();
+        $(".fulltext-blocks").hide();
+
+        $("#main-heading").text("Topics");
+
+        if (jQuery.isEmptyObject(global_topic);) {
+            $.get("/localhost:3000/", function(data, status){
+                if (status == "sucess") {
+                    global_topic = data;
+                }
+            
+            });
+        }
+    })
+
+    $("#time-btn").click(function(e) {
+        $(".time-blocks").show();
+        $(".search-blocks").hide();
+        $(".work-blocks").hide();
+        $(".freq-blocks").hide();
+        $(".anom-blocks").hide();
+        $(".influ-blocks").hide();
+        $(".topic-blocks").hide();
+        $(".geo-blocks").hide();
+        $(".fulltext-blocks").hide();
+
+        $("#main-heading").text("Timeline");
+
+        if (jQuery.isEmptyObject(global_time);) {
+            $.get("/localhost:3000/", function(data, status){
+                if (status == "sucess") {
+                    global_time = data;
+                }
+            
+            });
+        }
+    })
+
+    $("#geo-btn").click(function(e) {
+        $(".geo-blocks").show();
+        $(".search-blocks").hide();
+        $(".work-blocks").hide();
+        $(".anom-blocks").hide();
+        $(".influ-blocks").hide();
+        $(".topic-blocks").hide();
+        $(".time-blocks").hide();
+        $(".fulltext-blocks").hide();
+
+        $("#main-heading").text("Geolocation");
+
+        if (jQuery.isEmptyObject(global_geo);) {
+            $.get("/localhost:3000/", function(data, status){
+                if (status == "sucess") {
+                    global_geo = data;
+                }
+            
+            });
+        }
+    })
+
+    $("#fulltext-btn").click(function(e) {
+        $(".fulltext-blocks").show();
+        $(".search-blocks").hide();
+        $(".work-blocks").hide();
+        $(".anom-blocks").hide();
+        $(".influ-blocks").hide();
+        $(".topic-blocks").hide();
+        $(".time-blocks").hide();
+        $(".geo-blocks").hide();
+
+        $("#main-heading").text("Full Text Search");
+
+        if (jQuery.isEmptyObject(global_fulltext);) {
+            $.get("/localhost:3000/", function(data, status){
+                if (status == "sucess") {
+                    global_fulltext = data;
+                }
+            
+            });
+        }
+    })
+    </script>
+
